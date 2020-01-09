@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <style>
+        body {
+            background-color: #64fcc9;
+        }
+        
+        form {
+            background-color: white;
+            width: 35%;
+            padding: 50px;
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /* border: solid 2px #007bff; */
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form>
+            <img width="120px" height="120px" src="https://image.flaticon.com/icons/png/512/1177/1177527.png"><br><br>
+            <h4>Sign In to view Darshan's profile</h4>
+            <div class="form-group">
+                <label for="exampleInputName">Name</label>
+                <input type="text" class="form-control" id="exampleInputInputName" aria-describedby="nameHelp" placeholder="Enter your name" required>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="date">Date of Birth</label>
+                <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputGender">Select your Gender</label><br>
+                <label class="radio-inline"><input type="radio" name="optradio" checked> Male</label><br>
+                <label class="radio-inline"><input type="radio" name="optradio"> Female</label>
+            </div>
+
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </center>
+</body>
+<script>
+    $(document).ready(function() {
+        var date_input = $('input[name="date"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'dd/mm/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+
+
+</html>
