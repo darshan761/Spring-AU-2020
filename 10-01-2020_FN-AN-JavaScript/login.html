@@ -1,0 +1,120 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Javascript</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        
+        form {
+            margin: 0 auto;
+            width: 30%;
+            height: 400px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        input {
+            width: 50%;
+            font-size: 21px;
+        }
+        
+        #submit {
+            background-color: #38eeff;
+            border: 0px;
+            padding: 6px;
+        }
+        
+        #error {
+            color: red;
+        }
+    </style>
+
+    <script>
+        function login() {
+
+            var usr = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var confpass = document.getElementById("confirm").value;
+            var error = document.getElementById("error");
+            console.log(pass.length);
+            var regex1 = /[$*@]/;
+            var regex2 = /[A-Z]/;
+            var regex3 = /[a-z]/;
+            var regex4 = /abc/;
+
+            var flag = true;
+            console.log("username: " + usr + "\npassword: " + pass);
+
+
+            if (pass != confpass) {
+                error.display = "show";
+                error.style.color = "red";
+                console.log("Password doesn't match");
+                error.innerHTML = "Password doesn't match";
+                flag = false;
+            }
+
+            if (!regex1.test(pass)) {
+                error.display = "show";
+                error.style.color = "red";
+                console.log("Password should contain special character @$*");
+                error.innerHTML = "Password should contain special character @$*";
+                flag = false;
+            }
+            if (!regex2.test(pass)) {
+                error.display = "show";
+                error.style.color = "red";
+                console.log("Password should contain atleast one capital letter");
+                error.innerHTML = "Password should contain atleast one capital letter";
+                flag = false;
+            }
+            if (!regex3.test(pass)) {
+                error.display = "show";
+                error.style.color = "red";
+                console.log("Password should contain atleast one small letter");
+                error.innerHTML = "Password should contain atleast one capital letter";
+                flag = false;
+            }
+            if (!regex4.test(pass)) {
+                error.display = "show";
+                error.style.color = "red";
+                console.log("Password should contain abc");
+                error.innerHTML = "Password should contain abc";
+                flag = false;
+            }
+            if (pass.length < 8) {
+                error.display = "show";
+                error.style.color = "red";
+                console.log("Password should be atleast 8 characters");
+                error.innerHTML = "Password should be atleast 8 characters";
+                flag = false;
+            }
+            if (flag) {
+                error.display = "show";
+                error.style.color = "green";
+                console.log("Login Successful");
+                alert("username: " + usr + "\npassword: " + pass);
+                error.innerHTML = "Login Successful";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <img width="120px" height="120px" src="https://image.flaticon.com/icons/png/512/1177/1177527.png"><br><br>
+        <input id="username" type="text" placeholder="Enter username" required><br><br>
+        <input id="password" type="password" placeholder="Enter password" required><br><br>
+        <input id="confirm" type="password" placeholder="confirm password" required><br><br>
+        <input id="submit" onclick="login()" type="submit" value="Submit"><br><br>
+        <span id="error" display="hidden"></span><br><br>
+    </form>
+
+</body>
+
+</html>

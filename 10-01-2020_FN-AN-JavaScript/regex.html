@@ -1,0 +1,81 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>
+        Gaming Paradise
+    </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: aquamarine;
+            padding: 20px;
+        }
+        
+        div {
+            margin: 0 auto;
+            width: 30%;
+            height: 450px;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        input textarea select {
+            width: 70%;
+            font-size: 21px;
+        }
+    </style>
+    <script>
+        function search() {
+            var content = document.getElementById("content").value;
+            var display = document.getElementById("display");
+            var names = ["roadkill", "gunner", "eatbullets", "guillotine", "chopchop", "riotstarter", "crash override", "electric saturn"];
+            var regex = new RegExp(content);
+            console.log(names.filter(x => regex.test(x)));
+            var filteredarr = names.filter(x => regex.test(x));
+            display.innerHTML = filteredarr.join("\n");
+        }
+
+        function sort() {
+            var content = document.getElementById("content").value;
+            var display = document.getElementById("display");
+            var names = ["roadkill", "gunner", "eatbullets", "guillotine", "chopchop", "riotstarter", "crash override", "electric saturn"];
+            var regex = new RegExp(content);
+            console.log(names.filter(x => regex.test(x)));
+            var sortedarr = names.filter(x => regex.test(x));
+            display.innerHTML = sortedarr.sort().join("\n");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input placeholder="Enter username" type="text"><br><br>
+        <select>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Australia">Australia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="England">England</option>
+                <option value="U.A.E">U.A.E</option>
+                <option value="Africa">Africa</option>
+              </select><br><br>
+        <input id="content" onkeyup="search()" placeholder="Enter name" type="text"><br><br>
+        <textarea id="display" rows="8" disabled>
+roadkill
+gunner
+eatbullets
+guillotine
+chopchop
+riotstarter
+crash override
+electric saturn
+</textarea><br>
+        <button class="btn btn-primary" onclick="sort()">Sort</button><br><br>
+    </div>
+
+</body>
+
+</html>
