@@ -1,0 +1,11 @@
+<table margin="auto">
+    <tr *ngFor="let i of name;let ind = index ">
+        <input value={{i.name}} [disabled]="inputDisabled">
+        <input value={{i.username}} [disabled]="inputDisabled">
+        <input value={{i.email}} [disabled]="inputDisabled">
+        <input value={{i.ssn}} [disabled]="inputDisabled">
+        <button class="btn btn-danger" (click)="delete(ind)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+        <button class="btn btn-info" (click)="edit()"><i class="fa fa-edit"></i> Edit</button>
+        <button class="btn btn-warning" (click)="save(ind)"><i class="fa fa-save"></i> save</button>
+    </tr>
+</table>

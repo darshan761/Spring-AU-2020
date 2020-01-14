@@ -1,0 +1,27 @@
+<div>
+    <form align="center" [formGroup]="myForm">
+        <img width="120px" height="120px" src="https://image.flaticon.com/icons/png/512/1177/1177527.png"><br><br>
+        <label>
+                  Name:
+                  <input type="text" formControlName="name">
+                </label>
+        <br><br>
+        <label>
+                  Email:
+                  <input type="email" ngModel [email] = 'true' formControlName="email">
+                </label>
+        <br><br>
+        <label>
+                    SSN:
+                    <input type="number"  formControlName="ssn">
+                  </label>
+        <br><br>
+        <label>
+                    Username:
+                    <input type="text" formControlName="username">
+                  </label>
+        <br><br>
+        <button type="submit" [disabled]="!myForm.valid" (click)="saveForm()" class="btn btn-lg btn-primary btn-block">Save</button>
+
+    </form>
+</div>

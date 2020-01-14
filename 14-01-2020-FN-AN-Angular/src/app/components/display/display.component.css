@@ -1,0 +1,15 @@
+div {
+    padding: 10px;
+    margin: 10px;
+}
+
+button,
+input {
+    padding: 7px;
+    margin: 2px;
+}
+
+button {
+    width: 100px;
+    margin-left: 3px;
+}
