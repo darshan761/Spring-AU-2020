@@ -1,0 +1,21 @@
+/*
+ * Pollution css File
+*/
+
+.Pollution {
+    /* propertys here */
+    margin: 0 auto;
+}
+
+#search {
+    margin: 20px;
+    width: 50%;
+    font-size: 32px;
+}
+
+button {
+    margin: 20px;
+    width: 30%;
+    height: 52px;
+    font-size: 42px;
+}
