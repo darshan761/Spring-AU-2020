@@ -1,0 +1,56 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+    <aop:aspectj-autoproxy />
+			<bean id="loggingAspect"  class="com.springAU.aspect.EmployeeAspect" />	
+          
+        <bean id="employee1"  class="com.springAU.model.Employee">
+        	<constructor-arg value="1"></constructor-arg>
+        	<constructor-arg value="Darshan Patil"></constructor-arg>
+        	<constructor-arg value="Sr. Software Developer"></constructor-arg>
+        </bean>
+           
+           <bean id="employee2" class="com.springAU.model.Employee">
+           		<constructor-arg  value="2"></constructor-arg>
+           		<constructor-arg  value="Rohit Gonsalves"></constructor-arg>
+           		<constructor-arg value="Sr. Data Analyst"></constructor-arg>
+           </bean>
+           
+             
+        <bean id="employee3"  class="com.springAU.model.Employee">
+        	<constructor-arg value="3"></constructor-arg>
+        	<constructor-arg value="Omkar Raykar"></constructor-arg>
+        	<constructor-arg value="Sr. Platforn Engineer"></constructor-arg>
+        </bean>
+           
+         <bean id="employeeServiceList" class="com.springAU.service.EmployeeService"  >
+	         <property name="employeeList">
+	         	<list>
+		        	<ref bean="employee1"></ref>
+		         	<ref bean="employee2"></ref>
+		         	<ref bean="employee3"></ref>
+		         </list>
+	         </property>
+         </bean>
+           
+          <bean id="mapEmployee" class="com.springAU.model.Employee">
+	           	<property name="employeeMap">
+		           	<map>
+			           	<entry key="1" value-ref="employee1"/>
+						  <entry key="2" value-ref="employee2"/>
+						  <entry key="3" value-ref="employee3"/>
+	         		</map>
+        		 </property>
+	            
+         </bean>
+         
+        
+           
+</beans>
