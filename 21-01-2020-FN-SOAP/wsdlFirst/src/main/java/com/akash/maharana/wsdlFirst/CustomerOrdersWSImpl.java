@@ -65,7 +65,7 @@ public class CustomerOrdersWSImpl implements CustomerOrdersPortType{
 	}
 	
 	// added method for updating order
-	@SuppressWarnings("unlikely-arg-type") // to supress warning for BigInteger
+	@SuppressWarnings("unlikely-arg-type") // to suppress warning for BigInteger
 	@Override
 	public UpdateOrdersResponse updateOrders(UpdateOrdersRequest request) {
 		
@@ -75,10 +75,10 @@ public class CustomerOrdersWSImpl implements CustomerOrdersPortType{
 			BigInteger customerId=request.getCustomerId();
 			Order order=request.getOrder();
 			List<Order> orders=customerOrders.get(customerId);
-			orders.remove(request.getOrderId());
-			orders.add(order);
+			orders.remove(request.getOrderId()); // first remove
+			orders.add(order); // then add to update order
 			customerOrders.remove(customerId);
-			customerOrders.put(customerId, orders);
+			customerOrders.put(customerId, orders); // update customerOrders
 
 			response.setResult(true);
 		}
@@ -93,17 +93,17 @@ public class CustomerOrdersWSImpl implements CustomerOrdersPortType{
 	
 	
 	// added method for deleting order
-	@SuppressWarnings("unlikely-arg-type") // to supress warning for BigInteger
+	@SuppressWarnings("unlikely-arg-type") // to suppress warning for BigInteger
 	@Override
 	public DeleteOrdersResponse deleteOrders(DeleteOrdersRequest request) {
 		DeleteOrdersResponse response = new DeleteOrdersResponse();
 		
 		try {
 			BigInteger customerId = request.getCustomerId();
-			List<Order> orders=customerOrders.get(customerId);
-			orders.remove(request.getOrderId());
+			List<Order> orders= customerOrders.get(customerId);
+			orders.remove(request.getOrderId()); // removes from orders
 			customerOrders.remove(customerId);
-			customerOrders.put(customerId, orders);
+			customerOrders.put(customerId, orders); // updates customerOrders
 			
 			response.setResult(true);
 		}
