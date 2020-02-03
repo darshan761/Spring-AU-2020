@@ -1,0 +1,77 @@
+{
+    "mystery": [{
+            "name": "Murder on orient express",
+            "author": "Agatha Christie",
+            "genre": "mystery",
+            "pages": "312",
+            "img": "mooe",
+            "year": "1922"
+        },
+        {
+            "name": "Rebecca",
+            "author": "Daphne du Maurier",
+            "genre": "mystery",
+            "pages": "322",
+            "img": "reb",
+            "year": "1888"
+        },
+        {
+            "name": "The Da Vinci Code",
+            "author": "Dan Brown",
+            "genre": "mystery",
+            "pages": "412",
+            "img": "tdvc",
+            "year": "1907"
+        }
+    ],
+    "romance": [{
+            "name": "Fault in our stars",
+            "author": "John Green",
+            "genre": "romance",
+            "pages": "323",
+            "img": "fios",
+            "year": "1887"
+        },
+        {
+            "name": "PS: I love you",
+            "author": "Cecelia Ahern",
+            "genre": "romance",
+            "pages": "120",
+            "img": "psilu",
+            "year": "2004"
+        },
+        {
+            "name": "A Walk to remember",
+            "author": "Nicola sparks",
+            "genre": "romance",
+            "pages": "200",
+            "img": "awtr",
+            "year": "1999"
+        }
+    ],
+    "selfhelp": [{
+            "name": "Rich Dad Poor Dad",
+            "author": "Robert Kiyosaki and Sharon Lechter",
+            "genre": "selfhelp",
+            "pages": "207",
+            "img": "rdpd",
+            "year": "1997"
+        },
+        {
+            "name": "The Secret",
+            "author": "Rhonda Byrne",
+            "genre": "selfhelp",
+            "pages": "224",
+            "img": "sec",
+            "year": "2006"
+        },
+        {
+            "name": "The Four Agreements",
+            "author": "Don Miguel Ruiz",
+            "genre": "selfhelp",
+            "pages": "90",
+            "img": "tfa",
+            "year": "1997"
+        }
+    ]
+}
